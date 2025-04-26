@@ -1,0 +1,10 @@
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Разстояние между изображенията */
+}
+
+.image-item {
+    width: 48%; /* За да се поберат по два реда */
+    object-fit: cover; /* За да не се изкривяват изображенията */
+}
