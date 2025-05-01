@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Видео на целия екран</title>
     <style>
         /* Пълна ширина и височина на целия екран */
@@ -19,13 +20,11 @@
         /* Контейнер за видеото */
         .video-container {
             position: relative;
-            /* Вместо absolute, за да покрие целия екран */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            /* Низък индекс, така че видеото да е на фона */
         }
 
         /* Стил за iframe */
@@ -34,8 +33,9 @@
             height: 100%;
             border: none;
             object-fit: cover;
-            /* Приспособява видеото към целия екран */
-            position: relative;
+            position: absolute; /* Позиционира се абсолютно за да покрие целия екран */
+            top: 0;
+            left: 0;
         }
 
         /* Преключваща област */
@@ -46,23 +46,23 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            /* Няма да се вижда, но ще улови кликванията */
         }
     </style>
 </head>
 
 <body>
-    <iframe
-        src="https://player.vimeo.com/video/892584646?muted=1&amp;autoplay=1&amp;loop=1&amp;background=1&amp;app_id=122963"
-        width="426" height="240" frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Видео за сайта_2023"
-        data-ready="true" class="elementor-background-video-embed" style="width: 1920px; height: 1081.69px;"></iframe>
+    <div class="video-container">
+        <iframe
+            src="https://player.vimeo.com/video/892584646?muted=1&amp;autoplay=1&amp;loop=1&amp;background=1&amp;app_id=122963"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Видео за сайта_2023">
+        </iframe>
+    </div>
 
     <!-- Преключваща област за пренасочване към друга страница -->
     <div class="click-area" onclick="window.location.href='История и мисия - SPGKE.htm';"></div>
-    <img style="position:fixed; bottom:20px; right:20px; z-index:2; width: 100px; height: 100px;" src="click.png">
 
-
+    <img style="position:fixed; bottom:20px; right:20px; z-index:2; width: 100px; height: 100px;" src="click.gif">
 </body>
 
 </html>
