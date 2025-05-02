@@ -331,3 +331,10 @@ h2 span {
   align-items: center;
   padding: 1em 0;
 }
+
+@media (max-width: 600px) {
+  #activeYoung {
+      width: 100%;
+      height: auto;
+  }
+}
