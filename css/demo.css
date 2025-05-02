@@ -321,3 +321,13 @@ h2 span {
   display: block;   /* Прави изображението блоков елемент, за да се избегне излишното пространство под него */
 }
 
+.rt-heading {
+  text-align: center;
+}
+
+.image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
