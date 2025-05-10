@@ -107,7 +107,7 @@ h1 {
     padding: 20px 30px;
     border-radius: 10px;
     text-align: left;
-    width: 350px;
+    width: 370px;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     font-family: sans-serif;
   }
@@ -135,6 +135,7 @@ h1 {
   #info-modal p strong {
     display: inline-block;
     width: 100px;
+    margin-right: 5px;
   }
   
   .label-advantage {
