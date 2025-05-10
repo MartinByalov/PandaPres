@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f3eb;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #ff914d;
+}
+
+/* Контейнер с всички draggable елементи */
+.source-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Драгваем елемент с изображение и текст */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 120px;
+    width: auto;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    cursor: grab;
+    align-self: flex-start; /* ⬅️ За да няма изравняване по височина */
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.item p {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #ff914d;
+}
+
+/* Контейнер за drop зони */
+.dropzones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+/* Всяка drop зона */
+.dropzone {
+    flex: 1;
+    min-height: 200px;
+    border: 2px dashed #007376;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #eef9ff;
+    transition: background-color 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropzone h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ff914d;
+}
+
+/* Контейнер вътре в dropzone, в който се слагат елементите */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: left;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    font-family: sans-serif;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #ff914d;
+  }
+  
+  .close-button {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .close-button:hover {
+    color: #000;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #info-modal p strong {
+    display: inline-block;
+    width: 100px;
+  }
+  
+  .label-advantage {
+    color: #007376;
+  }
+  
+  .label-disadvantage {
+    color: #d9534f;
+  }
+  
+  

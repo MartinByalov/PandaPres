@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Класифицирай източниците на енергия</title>
+    <link rel="stylesheet" href="dragStyles.css">
+</head>
+
+<body>
+    <h1>Класифицирай източниците на енергия</h1>
+
+    <div class="source-container" id="source-container">
+        <!-- Възобновяеми -->
+        <div class="item" draggable="true" data-type="renewable" data-id="wind">
+            <p>ВЯТЪР</p>
+            <img src="images/wind.png" alt="Вятър">
+        </div>
+        <div class="item" draggable="true" data-type="renewable" data-id="geothermal">
+            <p>ГЕОТЕРМАЛНА ЕНЕРГИЯ</p>
+            <img src="images/geothermal.png" alt="Геотермална енергия">
+        </div>
+        <div class="item" draggable="true" data-type="renewable" data-id="water">
+            <p>ВОДА</p>
+            <img src="images/water.png" alt="Вода">
+        </div>
+        <div class="item" draggable="true" data-type="renewable" data-id="biomass">
+            <p>БИОМАСА</p>
+            <img src="images/biomass.png" alt="Биомаса">
+        </div>
+        <div class="item" draggable="true" data-type="renewable" data-id="sun">
+            <p>СЛЪНЦЕ</p>
+            <img src="images/sun.png" alt="Слънце">
+        </div>
+
+        <!-- Невъзобновяеми -->
+        <div class="item" draggable="true" data-type="nonrenewable" data-id="nuclear">
+            <p>ЯДРЕНА ЕНЕРГИЯ</p>
+            <img src="images/nuclear.png" alt="Ядрена енергия">
+        </div>
+        <div class="item" draggable="true" data-type="nonrenewable" data-id="oil">
+            <p>НЕФТ</p>
+            <img src="images/oil.png" alt="Нефт">
+        </div>
+        <div class="item" draggable="true" data-type="nonrenewable" data-id="gas">
+            <p>ПРИРОДЕН ГАЗ</p>
+            <img src="images/gas.png" alt="Газ">
+        </div>
+        <div class="item" draggable="true" data-type="nonrenewable" data-id="coal">
+            <p>ВЪГЛИЩА</p>
+            <img src="images/coal.png" alt="Въглища">
+        </div>
+    </div>
+
+    <div class="dropzones">
+        <div class="dropzone" data-accept="renewable">
+            <h2>Възобновяеми източници</h2>
+            <div class="card-container"></div>
+        </div>
+        <div class="dropzone" data-accept="nonrenewable">
+            <h2>Невъзобновяеми източници</h2>
+            <div class="card-container"></div>
+        </div>
+    </div>
+
+    <div id="info-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button">&times;</span>
+            <h2 id="modal-title">Източник</h2>
+            <p><strong><span class="label-advantage">Предимство:</span></strong> <span id="modal-advantage"></span></p>
+            <p><strong><span class="label-disadvantage">Недостатък:</span></strong> <span id="modal-disadvantage"></span></p>
+
+        </div>
+    </div>
+
+    <script src="drag.js"></script>
+</body>
+
+</html>
