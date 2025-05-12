@@ -2,43 +2,50 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: #f5f3eb;
-      overflow-x: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    margin-top: 20px;
+    margin: 20px 0;
     color: #ff914d;
+    font-size: 28px;
 }
 
-/* Контейнер с всички draggable елементи */
+/* Контейнер с draggable елементи */
 .source-container {
-    margin: 20px auto;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-/* Драгваем елемент с изображение и текст */
+/* Драгваем елемент */
 .item {
+    width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
-    max-width: 120px;
-    width: auto;
     box-sizing: border-box;
-    word-wrap: break-word;
     cursor: grab;
-    align-self: flex-start; /* ⬅️ За да няма изравняване по височина */
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: scale(1.03);
 }
 
 .item img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -51,37 +58,36 @@ h1 {
     color: #ff914d;
 }
 
-/* Контейнер за drop зони */
+/* Контейнери за drop зони */
 .dropzones {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 40px;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Всяка drop зона */
 .dropzone {
-    flex: 1;
+    flex: 1 1 300px;
     min-height: 200px;
     border: 2px dashed #007376;
     border-radius: 10px;
-    margin: 20px;
     padding: 15px;
     background-color: #eef9ff;
-    transition: background-color 0.3s ease;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .dropzone h2 {
     margin-bottom: 15px;
-    text-align: center;
+    font-size: 18px;
     color: #ff914d;
 }
 
-/* Контейнер вътре в dropzone, в който се слагат елементите */
+/* Контейнер за картите в drop зона */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -90,6 +96,7 @@ h1 {
     width: 100%;
 }
 
+/* Модален прозорец */
 .modal {
     position: fixed;
     top: 0;
@@ -101,60 +108,60 @@ h1 {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fff;
     padding: 20px 30px;
     border-radius: 10px;
-    text-align: left;
     width: 370px;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: left;
     font-family: sans-serif;
-  }
-  
-  .modal-content h2 {
+}
+
+.modal-content h2 {
     margin-top: 0;
     color: #ff914d;
-  }
-  
-  .close-button {
+}
+
+.close-button {
     float: right;
     font-size: 24px;
     cursor: pointer;
     color: #888;
-  }
-  
-  .close-button:hover {
+}
+
+.close-button:hover {
     color: #000;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     display: none;
-  }
-  
-  #info-modal p strong {
+}
+
+#info-modal p strong {
     display: inline-block;
     width: 100px;
     margin-right: 5px;
-  }
-  
-  .label-advantage {
-    color: #007376;
-  }
-  
-  .label-disadvantage {
-    color: #d9534f;
-  }
-  
-  .source-container {
-    width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
 }
 
+.label-advantage {
+    color: #007376;
+}
+
+.label-disadvantage {
+    color: #d9534f;
+}
+
+/* Responsive дизайн за телефони и таблети */
 @media (max-width: 768px) {
-    .source-container, .dropzones {
+    h1 {
+        font-size: 22px;
+    }
+
+    .source-container,
+    .dropzones {
         flex-direction: column;
         align-items: center;
     }
@@ -165,17 +172,8 @@ h1 {
     }
 
     .item {
-        max-width: 100px;
+        width: 100px;
         padding: 8px;
-    }
-
-    .modal-content {
-        width: 90%;
-        padding: 15px 20px;
-    }
-
-    h1 {
-        font-size: 22px;
     }
 
     .item p {
@@ -184,5 +182,10 @@ h1 {
 
     .dropzone h2 {
         font-size: 16px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px 20px;
     }
 }
